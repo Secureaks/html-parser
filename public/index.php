@@ -24,7 +24,7 @@ require_once "../vendor/autoload.php";
     </form>
     <div id="output">
         <h2>Parsed HTML</h2>
-        <div><?= Parser::parse() ?></div>
+        <div><?= htmlspecialchars(Parser::parse(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></div>
     </div>
 </div>
 </body>
