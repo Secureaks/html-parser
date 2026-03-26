@@ -24,7 +24,14 @@ require_once "../vendor/autoload.php";
     </form>
     <div id="output">
         <h2>Parsed HTML</h2>
-        <div><?= Parser::parse() ?></div>
+        <?php $content = Parser::parse(); ?>
+        <iframe
+            title="Parsed HTML preview"
+            src="data:text/html;charset=utf-8;base64,<?= base64_encode($content) ?>"
+            sandbox=""
+            referrerpolicy="no-referrer"
+            style="width:100%; min-height:240px; border:1px solid #ccc;"
+        ></iframe>
     </div>
 </div>
 </body>
