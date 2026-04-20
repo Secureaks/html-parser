@@ -2,9 +2,8 @@
 
 use App\Utils\Parser;
 
-require_once "../vendor/autoload.php";
+require_once "../vendor/autoload.php";  
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,6 +16,7 @@ require_once "../vendor/autoload.php";
 <body>
 <h1>HTML Parser</h1>
 <div class="container">
+    
     <form action="" method="post">
         <h2>HTML to parse</h2>
         <label for="html"></label><textarea id="html" name="html" rows="10" cols="50"></textarea><br>
