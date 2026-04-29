@@ -5,6 +5,10 @@ namespace App\Utils;
 class Parser
 {
     public static function parse() {
-        return htmlspecialchars($_POST['html'] ?? '', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+        static $purifier = null;
+        if ($purifier === null) {
+            $purifier = new \HTMLPurifier(\HTMLPurifier_Config::createDefault());
+        }
+        return $purifier->purify($_POST['html'] ?? '');
     }
 }
